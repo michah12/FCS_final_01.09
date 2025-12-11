@@ -1,7 +1,3 @@
-"""
-Styling Module - All CSS for Scentify App
-Extracted from main file to keep code organized
-"""
 import streamlit as st
 
 
@@ -301,7 +297,7 @@ def apply_custom_styling():
             box-shadow: none !important;
         }
         
-        /* COMPLETELY DISABLE ALL TEXT COLOR CHANGES ON HOVER */
+        /* Completely disable all text color changes on hover */
         p, span, div, label, h1, h2, h3, h4, h5, h6, summary, a, li, td, th, pre, code {
             transition: none !important;
         }
@@ -312,7 +308,7 @@ def apply_custom_styling():
             color: #6b5b95 !important;
         }
         
-        /* Change dropdown arrow from red to purple - ULTRA AGGRESSIVE + HOVER */
+        /* Change dropdown arrow from red to purple */
         [data-baseweb="select"] svg,
         [data-baseweb="select"] svg *,
         [data-baseweb="select"] path,
@@ -424,7 +420,7 @@ def apply_custom_styling():
             margin-bottom: 5px;
         }
         
-        /* Questionnaire styling - clean, no white box */
+        /* Questionnaire styling */
         .bipolar-slider {
             padding: 20px 0;
             margin: 20px 0;
@@ -436,7 +432,7 @@ def apply_custom_styling():
             color: #6b5b95;
         }
         
-        /* Questionnaire styling - clean, no white box */
+        /* Questionnaire styling */
         .bipolar-slider {
             padding: 20px 0;
             margin: 20px 0;
@@ -473,9 +469,7 @@ def apply_custom_styling():
             font-weight: 400;
         }
         
-        /* HIDE ONLY TICK MARKS - KEEP SLIDER HANDLE */
-        
-        /* Target only tick mark and dot elements, NOT the handle */
+        /* Target only tick mark and dot elements */
         .stSlider .rc-slider-mark,
         .stSlider .rc-slider-mark-text,
         .stSlider .rc-slider-dot,
@@ -499,7 +493,7 @@ def apply_custom_styling():
             display: none !important;
         }
         
-        /* Make sure the handle/thumb is visible and functional */
+        /* Make sure the handle is visible and functional */
         .stSlider .rc-slider-handle,
         div[data-baseweb="slider"] .rc-slider-handle,
         [data-baseweb="slider"] .rc-slider-handle,

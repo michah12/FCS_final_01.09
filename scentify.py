@@ -1,12 +1,3 @@
-"""
-Scentify - Perfume Recommendation App
-
-Main application file. Handles the UI, search, questionnaire, inventory, 
-and ML recommendations. Uses the Fragella API for perfume data.
-
-Built by Jil, Diego, Luis, Livio, and Micha
-"""
-
 import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
@@ -69,17 +60,17 @@ from ui.detail_components import (
     get_accord_colors
 )
 
-# Load API key from .env file
+# Load API Key from .env file
 load_dotenv()
 FRAGELLA_API_KEY = os.getenv("FRAGELLA_API_KEY")
 
 # Check if API key is configured
 if not FRAGELLA_API_KEY:
-    st.error("FRAGELLA_API_KEY not found. Please create a .env file with your API key.")
+    st.error("FRAGELLA_API_KEY not found.")
     st.stop()
 
 st.set_page_config(
-    page_title="Scentify - Perfume Finder",
+    page_title="Scentify Perfume Finder",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -119,7 +110,7 @@ def save_user_interactions(interactions: List[Dict]):
     _save_interactions(interactions, USER_INTERACTIONS_FILE)
 
 def load_user_inventory() -> List[Dict]:
-    """Load user perfume collection from JSON file"""
+    """Load user parfume collection from JSON file"""
     return _load_inventory(USER_INVENTORY_FILE)
 
 def save_user_inventory(inventory: List[Dict]):
@@ -165,7 +156,7 @@ def update_perfume_rankings():
     return rankings
 
 def get_ml_sorted_perfumes(perfumes: List[Dict]) -> List[Dict]:
-    """Sort perfumes by their popularity (click count)"""
+    """Sort perfumes by their popularity based on number of clicks"""
     rankings = load_perfume_rankings()
     
     sorted_perfumes = sorted(
@@ -204,7 +195,7 @@ def initialize_session_state():
         with st.spinner("Loading perfumes from Fragella API..."):
             st.session_state.perfume_database = get_initial_perfumes(FRAGELLA_API_KEY)
             if not st.session_state.perfume_database:
-                st.warning("Could not load perfumes from API. Please check your internet connection and API key.")
+                st.warning("Could not load perfumes from API.")
     
     if 'user_inventory' not in st.session_state:
         st.session_state.user_inventory = load_user_inventory()
@@ -247,7 +238,7 @@ def render_header():
             </div>
             """
         else:
-            # Fallback to text if image not found
+            # Fallback to Text if image not found
             st.warning(f"Logo image not found at '{LOGO_IMAGE_PATH}'. Using text logo instead.")
             logo_html = f"""
             <div style="position: relative; margin-top: -45px;">
@@ -386,7 +377,7 @@ def display_perfume_card(perfume: Dict, show_ml_badge: bool = False, source: str
                 if was_added:
                     record_interaction(perfume['id'], 'add_to_inventory')
                     st.success(f"Added **{perfume.get('name', 'Perfume')}** to your inventory!")
-                    # If not added (already exists), error message shows without rerun
+                    # If not added, error message shows without rerun
 
 def display_inventory_perfume_card(perfume: Dict, index: int):
     """Display perfume card in inventory view"""
@@ -441,7 +432,7 @@ def display_inventory_perfume_card(perfume: Dict, index: int):
         with col2:
             view_clicked = st.button("View", key=f"view_inventory_{perfume['id']}_{index}", use_container_width=True)
             if view_clicked:
-                # View details button - does NOT remove, ONLY shows details
+                # View details button does not remove, only shows details
                 record_interaction(perfume['id'], 'click')
                 st.session_state.current_perfume = perfume.copy()
                 st.session_state.show_perfume_details = True
@@ -454,10 +445,9 @@ def display_inventory_perfume_card(perfume: Dict, index: int):
 def display_addable_perfume_card(perfume: Dict):
     """
     Display perfume card with add and view buttons.
-    PERFECTLY ALIGNED with fixed heights.
     
     """
-    # Use perfume icon if no image available
+    # Use perfume icon if no Image available
     image_url = perfume.get('image_url', '')
     if not image_url or image_url == '':
         image_url = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI2U4ZTRmMCIvPjxwYXRoIGQ9Ik04MCA2MGgyMHY0MEg4MHoiIGZpbGw9IiM2YjViOTUiLz48cmVjdCB4PSI2MCIgeT0iMTAwIiB3aWR0aD0iNjAiIGhlaWdodD0iMTIwIiByeD0iMTAiIGZpbGw9IiM2YjViOTUiIG9wYWNpdHk9IjAuOCIvPjxyZWN0IHg9IjcwIiB5PSIxMTAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI5MCIgZmlsbD0iI2M4YjhkOCIgb3BhY2l0eT0iMC42Ii8+PC9zdmc+'
@@ -489,7 +479,6 @@ def display_addable_perfume_card(perfume: Dict):
         with col2:
             view_clicked = st.button("View", key=f"view_no_add_{perfume['id']}", use_container_width=True)
             if view_clicked:
-                # THIS ONLY VIEWS - does NOT add to inventory
                 record_interaction(perfume['id'], 'click')
                 st.session_state.current_perfume = perfume.copy()
                 st.session_state.show_perfume_details = True
@@ -536,7 +525,7 @@ def render_filter_tags():
                         st.rerun()
                 
 def filter_perfumes(perfumes: List[Dict]) -> List[Dict]:
-    """Apply user-selected filters to perfume list"""
+    """Apply user-selected filters to parfume list"""
     filtered = perfumes.copy()
     
     if st.session_state.search_query:
@@ -565,23 +554,23 @@ def create_donut_chart(note_counter: Counter, title: str):
     top_10_total = sum(count for _, count in top_10)
     rest_count = total - top_10_total
     
-    # Prepare data: top 10 from highest to lowest, then Rest
+    # Prepare data top 10 from highest to lowest, then Rest
     labels = []
     values = []
     colors = []
     
     # Purple palette for top 10 (darkest for highest count)
     color_palette = [
-        '#6b5b95',  # Main purple (darkest) - highest count
+        '#6b5b95',  # Main purple
         '#7a6a9f',  # Dark purple
-        '#8979a9',  # Medium-dark purple
+        '#8979a9',  # Medium dark purple
         '#9888b3',  # Medium purple
-        '#a797bd',  # Medium-light purple
+        '#a797bd',  # Medium light purple
         '#b6a6c7',  # Light purple
         '#c5b5d1',  # Lighter purple
         '#d4c4db',  # Very light purple
         '#dcd0e3',  # Pale purple
-        '#e4dae9',  # Very pale purple - lowest count
+        '#e4dae9',  # Very pale purple
     ]
     
     for i, (note, count) in enumerate(top_10):
@@ -591,7 +580,7 @@ def create_donut_chart(note_counter: Counter, title: str):
         values.append(count)
         colors.append(color_palette[i] if i < len(color_palette) else color_palette[-1])
     
-    # Add Rest LAST (always at the end of the list)
+    # Add Rest last (always at the end of the list)
     if rest_count > 0:
         labels.append('Rest')
         values.append(rest_count)
@@ -656,7 +645,7 @@ def render_landing_page():
     # Create three equal columns for the sections
     col1, col2, col3 = st.columns(3)
     
-    # SECTION 1: SEARCH
+    # Section 1: Search
     with col1:
         st.markdown("""
             <div class="section-card">
@@ -674,7 +663,7 @@ def render_landing_page():
             st.session_state.search_query = ""
             st.rerun()
     
-    # SECTION 2: QUESTIONNAIRE
+    # Section 2: Questionnaire
     with col2:
         st.markdown("""
             <div class="section-card">
@@ -693,14 +682,14 @@ def render_landing_page():
             st.session_state.questionnaire_answers = {}  # Reset all answers to start fresh
             st.rerun()
     
-    # SECTION 3: PERFUME INVENTORY
+    # Section 3: Inventory
     with col3:
         st.markdown("""
             <div class="section-card">
                 <div class="section-title">Perfume Inventory</div>
                 <div class="section-description">
                     Manage your personal perfume collection. Add fragrances you own and 
-                    view detailed analytics and AI-powered recommendations based on your collection.
+                    view detailed analytics and recommendations based on your collection.
                 </div>
             </div>
         """, unsafe_allow_html=True)
@@ -709,7 +698,7 @@ def render_landing_page():
             st.session_state.active_section = "inventory"
             st.rerun()
     
-    # USER FAVORITES - Top 3 Most Popular Perfumes
+    # User favorites or Top 3 Most Popular Perfumes
     st.markdown("<br><br>", unsafe_allow_html=True)
     st.markdown('<h2 style="color: #6b5b95; text-align: center;">User Favorites</h2>', unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
@@ -874,13 +863,13 @@ def render_search_section():
     
     st.markdown("---")
     
-    # DISPLAY SELECTED FILTERS AS TAGS
+    # Display selected filters as tags
     if st.session_state.selected_filters:
         st.markdown('<h4 style="color: #6b5b95;">Selected Filters</h4>', unsafe_allow_html=True)
         render_filter_tags()
         st.markdown("---")
     
-    # RESET AND SEARCH BUTTONS
+    # Reset and search button
     col_btn1, col_btn2 = st.columns(2)
     
     with col_btn1:
@@ -897,7 +886,7 @@ def render_search_section():
     
         st.markdown("---")
     
-    # SEARCH RESULTS
+    # Search results
     st.markdown('<h3 style="color: #6b5b95;">Search Results</h3>', unsafe_allow_html=True)
     display_search_results()
 
@@ -929,11 +918,11 @@ def display_search_results():
         if force_show:
             st.session_state.force_show_results = False
     else:
-        # No search and no filters - show message
+        # If no search and no filters
         st.info("Enter a perfume name or apply filters to see results")
         return
     
-    # Apply ML ranking to sort perfumes by popularity (based on clicks only)
+    # Apply ML ranking to sort perfumes by popularity
     sorted_perfumes = get_ml_sorted_perfumes(filtered_perfumes)
     
     st.write(f"Found {len(sorted_perfumes)} perfume(s)")
@@ -956,13 +945,13 @@ def display_search_results():
     else:
         st.info("No perfumes match your search criteria. Try different search terms or adjust your filters.")
 
-# PERFUME DETAIL VIEW
+# Perfume detail view
 def render_perfume_detail_view(perfume: Dict):
     """
     Render detailed view of a perfume with all information.
     
     """
-    # Force scroll to top when detail view opens (minimal, one-time execution)
+    # Force scroll to top when detail view opens
     components.html(
         """
         <script>
@@ -999,7 +988,7 @@ def render_perfume_detail_view(perfume: Dict):
         # Coming from search section
         render_back_button("search", "Back to Results")
     
-    # CENTERED IMAGE AT TOP - Elegant container
+    # Centered image at top
     st.markdown(f'''
         <div style="background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
                     padding: 50px;
@@ -1035,7 +1024,7 @@ def render_perfume_detail_view(perfume: Dict):
         
     st.markdown("<div style='height: 40px;'></div>", unsafe_allow_html=True)
     
-    # PERFUME NAME & BRAND - Full width, centered
+    # Perfume name and brand
     perfume_name = perfume["name"]
     perfume_brand = perfume["brand"]
     perfume_desc = perfume['description']
@@ -1066,10 +1055,10 @@ def render_perfume_detail_view(perfume: Dict):
         </div>
     """, unsafe_allow_html=True)
     
-    # TWO COLUMN LAYOUT: Description on Left, Main Accords on Right
+    # Two collum layout: Description on Left, Main Accords on Right
     col_left, col_right = st.columns([1, 1], gap="large")
     
-    # LEFT COLUMN - DESCRIPTION
+    # Description of left collum
     with col_left:
         st.markdown("""
             <div style="text-align: center; margin-bottom: 30px;">
@@ -1100,7 +1089,7 @@ def render_perfume_detail_view(perfume: Dict):
             </div>
         """, unsafe_allow_html=True)
         
-        # LONGEVITY & SILLAGE - Perfectly centered boxes
+        # Longevity and sillage
         longevity_sillage_html = f"""
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
                 <div style="background: linear-gradient(135deg, #6b5b95 0%, #8b7aa8 100%); padding: 0; border-radius: 20px; box-shadow: 0 8px 25px rgba(107, 91, 149, 0.2); display: flex; align-items: center; justify-content: center; min-height: 180px;">
@@ -1127,7 +1116,7 @@ def render_perfume_detail_view(perfume: Dict):
         """
         st.markdown(longevity_sillage_html, unsafe_allow_html=True)
     
-    # RIGHT COLUMN - MAIN ACCORDS
+    # Main accords in the right collum
     with col_right:
         st.markdown("""
             <div style="text-align: center; margin-bottom: 30px;">
@@ -1145,7 +1134,7 @@ def render_perfume_detail_view(perfume: Dict):
             </div>
         """, unsafe_allow_html=True)
         
-        # Define accord colors - full list with thematic colors for each accord
+        # Define accord colors to display a full list with thematic colors for each accord
         accord_colors = {
             # Animal & Musk
             'animalic': '#8B7355', 'musk': '#D3C5B5', 'musky': '#E6D5E6', 'castoreum': '#6B5B4B',
@@ -1268,7 +1257,7 @@ def render_perfume_detail_view(perfume: Dict):
     
     st.markdown("<div style='margin: 30px 0;'></div>", unsafe_allow_html=True)
     
-    # PERFUME PYRAMID (Top, Heart, Base Notes) - modern heading with full width
+    # Perfume Pyramid (Top, Heart, Base Notes)
     st.markdown('''
         <div style="margin-bottom: 30px; text-align: center;">
             <h3 style="color: #6b5b95; 
@@ -1355,7 +1344,6 @@ def render_perfume_detail_view(perfume: Dict):
                         </div>
                     """, unsafe_allow_html=True)
             else:
-                # Old string format
                 st.markdown(f"""
                     <div class="note-card">
                         <div class="note-icon"></div>
@@ -1384,7 +1372,6 @@ def render_perfume_detail_view(perfume: Dict):
                         </div>
                     """, unsafe_allow_html=True)
             else:
-                # Old string format
                 st.markdown(f"""
                     <div class="note-card">
                         <div class="note-icon"></div>
@@ -1413,7 +1400,6 @@ def render_perfume_detail_view(perfume: Dict):
                         </div>
                     """, unsafe_allow_html=True)
             else:
-                # Old string format
                 st.markdown(f"""
                     <div class="note-card">
                         <div class="note-icon"></div>
@@ -1423,7 +1409,7 @@ def render_perfume_detail_view(perfume: Dict):
     
     st.markdown("<div style='height: 50px;'></div>", unsafe_allow_html=True)
     
-    # SEASONALITY - 4 boxes side by side with ranking
+    # Seasonality with 4 boxes side by side with ranking
     st.markdown("""
         <div style="text-align: center; margin-bottom: 30px;">
             <h2 style="color: #6b5b95; 
@@ -1452,7 +1438,7 @@ def render_perfume_detail_view(perfume: Dict):
     
     season_ranks = {season: rank for rank, (season, score) in enumerate(ranked_seasons, 1)}
     
-    # Season colors - original purple theme
+    # Season colors
     season_colors = {
         'Spring': '#b6a6c7',
         'Summer': '#9888b3',
@@ -1486,7 +1472,7 @@ def render_perfume_detail_view(perfume: Dict):
     # Create ranked order (1 to 4, left to right)
     ranked_seasons_list = sorted(season_ranks.items(), key=lambda x: x[1])
     
-    # Build HTML for each season box - clean and centered
+    # Build HTML for each season box
     boxes = []
     for season, rank in ranked_seasons_list:
         color = season_colors[season]
@@ -1497,7 +1483,7 @@ def render_perfume_detail_view(perfume: Dict):
     
     st.markdown(f'<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 50px;">{"".join(boxes)}</div>', unsafe_allow_html=True)
     
-    # OCCASION - Beautiful Day/Night Visual
+    # Occasions based on Day/Night usage
     st.markdown("""
         <div style="text-align: center; margin-bottom: 30px;">
             <h2 style="color: #6b5b95; 
@@ -1544,7 +1530,7 @@ def render_perfume_detail_view(perfume: Dict):
     day_label = day_display if day_percent > 5 else ""
     night_label = night_display if night_percent > 5 else ""
     
-    # Create beautiful purple-themed day/night visual
+    # Create purple themed day/night visual
     occasion_html = f"""
         <div style="padding: 40px 60px; background: linear-gradient(135deg, #f8f7fa 0%, #ffffff 100%); border-radius: 20px; box-shadow: 0 8px 30px rgba(107, 91, 149, 0.15); margin: 30px 0; border: 1px solid #e8e4f0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
@@ -1714,7 +1700,7 @@ def render_questionnaire_section():
     with col2:
         st.markdown(f'<div class="bipolar-label" style="text-align: right;">{current_q["right_label"]}</div>', unsafe_allow_html=True)
     
-    # Simple slider - let Streamlit handle it
+    # Slider graphic
     answer = st.slider(
         "Move slider to select",
         min_value=1,
@@ -1924,7 +1910,7 @@ def render_inventory_section():
     st.markdown('<div id="page-top" style="height: 1px;"></div>', unsafe_allow_html=True)
     
     
-    # Now continue with normal rendering
+    # Continuing with normal rendering
     if st.session_state.show_perfume_details and st.session_state.current_perfume:
         render_perfume_detail_view(st.session_state.current_perfume)
         return
@@ -1945,7 +1931,7 @@ def render_inventory_section():
     
     inventory = st.session_state.user_inventory
     
-    # Debug: Show inventory count
+    # Show inventory count
     st.caption(f"You have {len(inventory)} perfume(s) in your collection")
     
     if not inventory:
@@ -2086,7 +2072,7 @@ def render_inventory_statistics(inventory: List[Dict]):
         </div>
     """, unsafe_allow_html=True)
     
-    # DONUT CHARTS FOR NOTES
+    # Donut charts for notes
     st.markdown("""
         <div style="text-align: center; margin-bottom: 30px;">
             <h2 style="color: #6b5b95; 
@@ -2104,7 +2090,7 @@ def render_inventory_statistics(inventory: List[Dict]):
         </div>
     """, unsafe_allow_html=True)
     
-    # Collect all notes - extract names from dict format
+    # Collect all notes
     top_notes = []
     heart_notes = []
     base_notes = []
@@ -2138,7 +2124,7 @@ def render_inventory_statistics(inventory: List[Dict]):
     
     st.markdown("---")
     
-    # SEASONALITY - Count perfumes by their BEST season
+    # Seasonality based on count of perfumes by their most useful season
     st.markdown("""
         <div style="text-align: center; margin-bottom: 30px;">
             <h2 style="color: #6b5b95; 
@@ -2169,7 +2155,7 @@ def render_inventory_statistics(inventory: List[Dict]):
         </div>
     """, unsafe_allow_html=True)
     
-    # Count perfumes by their BEST season only
+    # Count perfumes by their best season
     season_counts = {'Winter': 0, 'Fall': 0, 'Spring': 0, 'Summer': 0}
     
     for perfume in inventory:
@@ -2183,7 +2169,7 @@ def render_inventory_statistics(inventory: List[Dict]):
     seasons = [s[0] for s in sorted_seasons]
     values = [s[1] for s in sorted_seasons]
     
-    # Season-specific colors - matching detail view
+    # Season-specific colors
     season_colors = {
         'Spring': '#b6a6c7',
         'Summer': '#9888b3',
@@ -2232,7 +2218,7 @@ def render_inventory_statistics(inventory: List[Dict]):
     
     st.plotly_chart(fig_season, use_container_width=True, config={'displayModeBar': False, 'staticPlot': True})
     
-    # OCCASION - Beautiful Day/Night Visual
+    # Occasion visual
     st.markdown("""
         <div style="text-align: center; margin-bottom: 30px;">
             <h2 style="color: #6b5b95; 
@@ -2283,7 +2269,7 @@ def render_inventory_statistics(inventory: List[Dict]):
     day_label = day_display if day_percent > 5 else ""
     night_label = night_display if night_percent > 5 else ""
     
-    # Create beautiful purple-themed day/night visual
+    # Create purple-themed day/night visual
     occasion_html = f"""
         <div style="padding: 40px 60px; background: linear-gradient(135deg, #f8f7fa 0%, #ffffff 100%); border-radius: 20px; box-shadow: 0 8px 30px rgba(107, 91, 149, 0.15); margin: 30px 0; border: 1px solid #e8e4f0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
@@ -2308,7 +2294,7 @@ def render_inventory_statistics(inventory: List[Dict]):
     """
     st.markdown(occasion_html, unsafe_allow_html=True)
 
-# ML RECOMMENDATIONS IN INVENTORY SECTION
+# ML recommendations in the inventory
 def render_ml_recommendations_in_inventory(inventory: List[Dict]):
     """Render ML-powered recommendations at the bottom of inventory section"""
     
@@ -2430,13 +2416,10 @@ def render_ml_recommendations_in_inventory(inventory: List[Dict]):
                     st.markdown(card_html, unsafe_allow_html=True)
 
 
-# MAIN APPLICATION
-
-# MAIN APPLICATION
+# Main Scentify application
 def main():
     """
-    Main entry point - this gets called when you run the app.
-    Sets everything up and routes to the correct page based on what the user clicked.
+    Main entry point which gets called when running the app.
     """
     # Apply all the custom CSS styling
     apply_custom_styling()
@@ -2458,7 +2441,7 @@ def main():
     elif st.session_state.active_section == "inventory":
         render_inventory_section()  # User's perfume collection
     
-    # Footer - Made with love
+    # Footer
     st.markdown("""
         <div style="text-align: center; margin-top: 60px; padding: 20px 0; color: #6b5b95; font-size: 14px; font-weight: 400;">
             made with love by Jil, Diego, Luis, Livio and Micha
@@ -2466,6 +2449,6 @@ def main():
     """, unsafe_allow_html=True)
 
 
-# RUN APPLICATION
+# Run Application
 if __name__ == "__main__":
     main()

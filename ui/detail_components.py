@@ -1,8 +1,3 @@
-"""
-Detail View Components
-Helper functions for rendering perfume detail view
-Broken down from the 652-line monster function
-"""
 import streamlit as st
 import streamlit.components.v1 as components
 import plotly.graph_objects as go
@@ -47,7 +42,7 @@ def render_detail_back_button(render_back_button_func):
 
 
 def render_perfume_image(perfume: Dict):
-    """Render centered perfume image with elegant styling"""
+    """Render centered perfume image"""
     st.markdown(f'''
         <div style="background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
                     padding: 50px;
@@ -85,7 +80,7 @@ def render_add_button(perfume: Dict, add_func, record_func):
 
 
 def render_perfume_title(perfume: Dict):
-    """Render perfume name and brand with elegant styling"""
+    """Render perfume name and brand"""
     perfume_name = perfume["name"]
     perfume_brand = perfume["brand"]
     
