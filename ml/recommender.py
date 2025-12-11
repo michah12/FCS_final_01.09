@@ -1,7 +1,3 @@
-"""
-ML Recommendation System
-Machine learning-based perfume recommendations
-"""
 import numpy as np
 import pickle
 import os
@@ -113,12 +109,11 @@ def train_ml_model(user_inventory: List[Dict], all_perfumes: List[Dict], ml_conf
     """
     Trains a machine learning model based on what perfumes the user owns.
     
-    The idea is simple: we take perfumes they own (positive examples) and randomly
+    We take perfumes they own (positive examples) and randomly
     sample perfumes they don't own (negative examples), then train a model to
     tell the difference. That model can then score new perfumes.
     
-    We use Logistic Regression by default - it's simple and works well.
-    Returns None if they don't have enough perfumes yet.
+    We use Logistic Regression by default because its simple and works well.
     """
     # Check if user has enough perfumes to train
     if len(user_inventory) < ml_config['min_inventory_size']:
@@ -198,7 +193,7 @@ def get_ml_recommendations(user_inventory: List[Dict],
                           top_n: int = 10,
                           ensure_diversity: bool = True) -> List[Dict]:
     """
-    This is the main recommendation engine - generates personalized suggestions.
+    This is the main recommendation engine
     
     How it works:
     1. Trains a model on the user's perfume collection (or loads an existing one)
@@ -268,7 +263,7 @@ def get_ml_recommendations(user_inventory: List[Dict],
 
 
 def apply_diversity_filter(perfumes: List[Dict], top_n: int) -> List[Dict]:
-    """Make sure diversity in scent types among recommendations."""
+    """Make sure diversity in scent types between recommendations."""
     if not perfumes:
         return []
     
@@ -298,7 +293,7 @@ def apply_diversity_filter(perfumes: List[Dict], top_n: int) -> List[Dict]:
 
 
 def generate_ml_explanation(perfume: Dict, user_inventory: List[Dict], score: float) -> str:
-    """Create human-readable explanation for why a perfume was recommended."""
+    """Create readable explanation for why a perfume was recommended."""
     # Analyze user's preferences from inventory
     all_user_accords = []
     for inv_perfume in user_inventory:
