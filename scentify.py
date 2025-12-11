@@ -580,7 +580,7 @@ def create_donut_chart(note_counter: Counter, title: str):
         values.append(count)
         colors.append(color_palette[i] if i < len(color_palette) else color_palette[-1])
     
-    # Add Rest last (always at the end of the list)
+    # Add Rest last
     if rest_count > 0:
         labels.append('Rest')
         values.append(rest_count)
@@ -731,7 +731,7 @@ def render_user_favorites():
     
     cols = st.columns(3, gap="large")
     
-    # Rank-specific badge colors (Gold, Silver, Bronze theme)
+    # Rank-specific badge colors (Gold, Silver, Bronze)
     rank_styles = [
         {'badge_bg': 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)', 'badge_text': 'white'},
         {'badge_bg': 'linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%)', 'badge_text': 'white'},
@@ -797,7 +797,7 @@ def render_search_section():
     
     st.markdown("---")
     
-    # FILTERS
+    # Filters
     st.markdown('<h3 style="color: #6b5b95;">Filters</h3>', unsafe_allow_html=True)
     
     all_brands = sorted(list(set([
@@ -1580,9 +1580,7 @@ def render_perfume_detail_view(perfume: Dict):
 
 def get_similar_perfumes(perfume: Dict, limit: int = 4) -> List[Dict]:
     """
-    Get similar perfumes based on scent type, gender, and price range.
-    Also considers current search filters if available.
-    
+    Get similar perfumes based on scent type, gender etc.
     """
     all_perfumes = st.session_state.perfume_database
     similar = []
@@ -1712,7 +1710,7 @@ def render_questionnaire_section():
         format=""
     )
     
-    # Custom clean numbers below slider
+    # Custom numbers below the slider
     st.markdown("""
     <div class="scale-numbers">
         <span>1</span>
@@ -2428,18 +2426,18 @@ def main():
     
     render_header()
     
-    # Figure out which page to show based on what button they clicked
+    # Figure out which page to show based on what button was clicked
     if st.session_state.active_section == "home":
-        render_landing_page()  # The main page with 3 options
+        render_landing_page()
         
     elif st.session_state.active_section == "search":
-        render_search_section()  # Search for specific perfumes
+        render_search_section()
         
     elif st.session_state.active_section == "questionnaire":
-        render_questionnaire_section()  # Answer questions to get recommendations
+        render_questionnaire_section()
         
     elif st.session_state.active_section == "inventory":
-        render_inventory_section()  # User's perfume collection
+        render_inventory_section()
     
     # Footer
     st.markdown("""
