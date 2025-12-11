@@ -1,0 +1,556 @@
+[
+  {
+    "id": "api_creed_aventus",
+    "name": "Creed Aventus",
+    "brand": "Creed",
+    "price": 75,
+    "size": "50ml",
+    "perfume_type": "Eau de Parfum",
+    "gender": "Male",
+    "scent_type": "Fresh",
+    "description": "A Moderate fragrance with Moderate projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/creed-aventus.jpg",
+    "top_notes": [
+      {
+        "name": "Bergamot",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Bergamot.png"
+      },
+      {
+        "name": "Black Currant",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Black%20Currant.png"
+      },
+      {
+        "name": "Apple",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Apple.png"
+      },
+      {
+        "name": "Lemon",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Lemon.png"
+      },
+      {
+        "name": "Pink Pepper",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Pink%20Pepper.png"
+      }
+    ],
+    "heart_notes": [
+      {
+        "name": "Bergamot",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Bergamot.png"
+      },
+      {
+        "name": "Black Currant",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Black%20Currant.png"
+      },
+      {
+        "name": "Apple",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Apple.png"
+      },
+      {
+        "name": "Lemon",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Lemon.png"
+      },
+      {
+        "name": "Pink Pepper",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Pink%20Pepper.png"
+      }
+    ],
+    "base_notes": [
+      {
+        "name": "Birch",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Birch.png"
+      },
+      {
+        "name": "Musk",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Musk.png"
+      },
+      {
+        "name": "Oak Moss",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Oak%20Moss.png"
+      },
+      {
+        "name": "Ambroxan",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Ambroxan.png"
+      },
+      {
+        "name": "Cedarwood",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Cedarwood.png"
+      }
+    ],
+    "main_accords": [
+      "Fruity",
+      "Sweet",
+      "Woody",
+      "Leather",
+      "Smoky",
+      "Citrus",
+      "Musky",
+      "Tropical",
+      "Fresh",
+      "Mossy"
+    ],
+    "seasonality": {
+      "Spring": 0,
+      "Summer": 0,
+      "Fall": 0,
+      "Winter": 0
+    },
+    "occasion": {
+      "Day": 0,
+      "Night": 0
+    },
+    "longevity": "Moderate",
+    "sillage": "Moderate",
+    "rating": 4.0
+  },
+  {
+    "id": "api_bleu_de_chanel_eau_de_parfum_for_men",
+    "name": "Bleu de Chanel Eau de Parfum for men",
+    "brand": "Chanel",
+    "price": 75,
+    "size": "50ml",
+    "perfume_type": "Eau de Parfum",
+    "gender": "Male",
+    "scent_type": "Citrus",
+    "description": "A Long Lasting fragrance with Moderate projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/bleu-de-chanel-eau-de-parfum-chanel-for-men.jpg",
+    "top_notes": [
+      {
+        "name": "Grapefruit",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Grapefruit.png"
+      },
+      {
+        "name": "Lemon",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Lemon.png"
+      },
+      {
+        "name": "Mint",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Mint.png"
+      },
+      {
+        "name": "Bergamot",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Bergamot.png"
+      },
+      {
+        "name": "Pink Pepper",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Pink%20Pepper.png"
+      },
+      {
+        "name": "Aldehydes",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Aldehydes.png"
+      },
+      {
+        "name": "Coriander",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Coriander.png"
+      }
+    ],
+    "heart_notes": [
+      {
+        "name": "Ginger",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Ginger.png"
+      },
+      {
+        "name": "Nutmeg",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Nutmeg.png"
+      },
+      {
+        "name": "Jasmine",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Jasmine.png"
+      },
+      {
+        "name": "Melon",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Melon.png"
+      }
+    ],
+    "base_notes": [
+      {
+        "name": "Incense",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Incense.png"
+      },
+      {
+        "name": "Amber",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Amber.png"
+      },
+      {
+        "name": "Cedar",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Cedar.png"
+      },
+      {
+        "name": "Sandalwood",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Sandalwood.png"
+      },
+      {
+        "name": "Patchouli",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Patchouli.png"
+      },
+      {
+        "name": "Amberwood",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Amberwood.png"
+      },
+      {
+        "name": "Labdanum",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Labdanum.png"
+      }
+    ],
+    "main_accords": [
+      "citrus",
+      "amber",
+      "woody",
+      "fresh spicy",
+      "aromatic",
+      "warm spicy",
+      "smoky",
+      "fresh",
+      "balsamic",
+      "powdery"
+    ],
+    "seasonality": {
+      "Winter": 2.1,
+      "Fall": 2.0,
+      "Spring": 1.8,
+      "Summer": 1.5
+    },
+    "occasion": {
+      "Day": 1.8,
+      "Night": 1.6
+    },
+    "longevity": "Long Lasting",
+    "sillage": "Moderate",
+    "rating": 4.0
+  },
+  {
+    "id": "api_xerjoff_1861_naxos",
+    "name": "Xerjoff 1861 Naxos",
+    "brand": "Xerjoff",
+    "price": 75,
+    "size": "50ml",
+    "perfume_type": "Eau de Parfum",
+    "gender": "Unisex",
+    "scent_type": "Gourmand",
+    "description": "A Long Lasting fragrance with Strong projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/xerjoff-1861-naxos.jpg",
+    "top_notes": [
+      {
+        "name": "Lavender",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Lavender.png"
+      },
+      {
+        "name": "Bergamot",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Bergamot.png"
+      },
+      {
+        "name": "Lemon",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Lemon.png"
+      }
+    ],
+    "heart_notes": [
+      {
+        "name": "Honey",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Honey.png"
+      },
+      {
+        "name": "Cinnamon",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Cinnamon.png"
+      },
+      {
+        "name": "Cashmeran",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Cashmeran.png"
+      },
+      {
+        "name": "Jasmine Sambac",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Jasmine%20Sambac.png"
+      }
+    ],
+    "base_notes": [
+      {
+        "name": "Tobacco Leaf",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Tobacco%20Leaf.png"
+      },
+      {
+        "name": "Vanilla",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Vanilla.png"
+      },
+      {
+        "name": "Tonka Bean",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Tonka%20Bean.png"
+      }
+    ],
+    "main_accords": [
+      "sweet",
+      "gourmand",
+      "vanilla",
+      "honey",
+      "tobacco",
+      "lavender",
+      "citrus",
+      "aromatic",
+      "floral",
+      "warm spicy",
+      "powdery"
+    ],
+    "seasonality": {
+      "Spring": 1.7,
+      "Winter": 1.3,
+      "Summer": 0.7,
+      "Fall": 0.4
+    },
+    "occasion": {
+      "Day": 1.6,
+      "Night": 1.0
+    },
+    "longevity": "Long Lasting",
+    "sillage": "Strong",
+    "rating": 4.0
+  },
+  {
+    "id": "api_babycat_unisex",
+    "name": "Babycat unisex",
+    "brand": "Yves Saint Laurent",
+    "price": 75,
+    "size": "50ml",
+    "perfume_type": "Eau de Parfum",
+    "gender": "Unisex",
+    "scent_type": "Fresh",
+    "description": "A Long Lasting fragrance with Strong projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/babycat-yves-saint-laurent-unisex.jpg",
+    "top_notes": [
+      {
+        "name": "Black and Pink Pepper",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Black%20And%20Pink%20Pepper.png"
+      },
+      {
+        "name": "Black Pepper",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Black%20Pepper.png"
+      },
+      {
+        "name": "elemi",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Elemi.png"
+      },
+      {
+        "name": "Pink Pepper",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Pink%20Pepper.png"
+      }
+    ],
+    "heart_notes": [
+      {
+        "name": "Olibanum",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Olibanum.png"
+      },
+      {
+        "name": "Saffron",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Saffron.png"
+      }
+    ],
+    "base_notes": [
+      {
+        "name": "Bourbon Vanilla",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Bourbon%20Vanilla.png"
+      },
+      {
+        "name": "Suede",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Suede.png"
+      },
+      {
+        "name": "Cedar",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Cedar.png"
+      }
+    ],
+    "main_accords": [
+      "vanilla",
+      "fresh spicy",
+      "warm spicy",
+      "leather",
+      "powdery",
+      "amber",
+      "musky",
+      "aromatic",
+      "balsamic",
+      "soft spicy"
+    ],
+    "seasonality": {
+      "Winter": 2.7,
+      "Fall": 1.9,
+      "Spring": 0.5,
+      "Summer": 0
+    },
+    "occasion": {
+      "Day": 0.5,
+      "Night": 3.1
+    },
+    "longevity": "Long Lasting",
+    "sillage": "Strong",
+    "rating": 4.0
+  },
+  {
+    "id": "api_imagination_for_men",
+    "name": "Imagination for men",
+    "brand": "Louis Vuitton",
+    "price": 75,
+    "size": "50ml",
+    "perfume_type": "Eau de Parfum",
+    "gender": "Male",
+    "scent_type": "Citrus",
+    "description": "A Long Lasting fragrance with Moderate projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/imagination-louis-vuitton-for-men.jpg",
+    "top_notes": [
+      {
+        "name": "Citron",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Citron.png"
+      },
+      {
+        "name": "Calabrian bergamot",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Calabrian%20Bergamot.png"
+      },
+      {
+        "name": "Sicilian Orange",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Sicilian%20Orange.png"
+      }
+    ],
+    "heart_notes": [
+      {
+        "name": "Tunisian Neroli",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Tunisian%20Neroli.png"
+      },
+      {
+        "name": "Nigerian Ginger",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Nigerian%20Ginger.png"
+      },
+      {
+        "name": "Ceylon Cinnamon",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Ceylon%20Cinnamon.png"
+      }
+    ],
+    "base_notes": [
+      {
+        "name": "Chinese Black Tea",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Chinese%20Black%20Tea.png"
+      },
+      {
+        "name": "Ambroxan",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Ambroxan.png"
+      },
+      {
+        "name": "Guaiac Wood",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Guaiac%20Wood.png"
+      },
+      {
+        "name": "Olibanum",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Olibanum.png"
+      }
+    ],
+    "main_accords": [
+      "citrus",
+      "fresh spicy",
+      "fresh",
+      "green",
+      "amber"
+    ],
+    "seasonality": {
+      "Spring": 1.9,
+      "Summer": 1.9,
+      "Fall": 0.5,
+      "Winter": 0.4
+    },
+    "occasion": {
+      "Day": 1.4,
+      "Night": 0.5
+    },
+    "longevity": "Long Lasting",
+    "sillage": "Moderate",
+    "rating": 4.0
+  },
+  {
+    "id": "api_parfums_de_marly_layton",
+    "name": "Parfums De Marly Layton",
+    "brand": "Parfums De Marly",
+    "price": 75,
+    "size": "50ml",
+    "perfume_type": "Eau de Parfum",
+    "gender": "Unisex",
+    "scent_type": "Oriental",
+    "description": "A Long Lasting fragrance with Strong projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/parfums-de-marly-layton.jpg",
+    "top_notes": [
+      {
+        "name": "Apple",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Apple.png"
+      },
+      {
+        "name": "Lavender",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Lavender.png"
+      },
+      {
+        "name": "Bergamot",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Bergamot.png"
+      },
+      {
+        "name": "Mandarin Orange",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Mandarin%20Orange.png"
+      }
+    ],
+    "heart_notes": [
+      {
+        "name": "Geranium",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Geranium.png"
+      },
+      {
+        "name": "Violet",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Violet.png"
+      },
+      {
+        "name": "Jasmine",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Jasmine.png"
+      }
+    ],
+    "base_notes": [
+      {
+        "name": "Vanilla",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Vanilla.png"
+      },
+      {
+        "name": "Cardamom",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Cardamom.png"
+      },
+      {
+        "name": "Sandalwood",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Sandalwood.png"
+      },
+      {
+        "name": "Pepper",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Pepper.png"
+      },
+      {
+        "name": "Guaiac Wood",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Guaiac%20Wood.png"
+      },
+      {
+        "name": "Patchouli",
+        "imageUrl": "https://d2k6fvhyk5xgx.cloudfront.net/note_images/Patchouli.png"
+      }
+    ],
+    "main_accords": [
+      "warm spicy",
+      "fresh spicy",
+      "woody",
+      "vanilla",
+      "aromatic",
+      "fruity",
+      "powdery",
+      "lavender",
+      "fresh",
+      "citrus"
+    ],
+    "seasonality": {
+      "Winter": 2.4,
+      "Spring": 1.7,
+      "Fall": 1.6,
+      "Summer": 1.2
+    },
+    "occasion": {
+      "Day": 1.7,
+      "Night": 1.4
+    },
+    "longevity": "Long Lasting",
+    "sillage": "Strong",
+    "rating": 4.0
+  }
+]
